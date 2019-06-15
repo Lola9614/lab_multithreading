@@ -5,11 +5,12 @@ import java.util.concurrent.Executor;
 public class BetterRadar implements Runnable {
 
     private PatriotBattery patriotBattery;
-    private static Integer BULLET_COUNTER = 20;
+    private Integer bulletCounter;
     private Executor executor;
 
-    public BetterRadar(PatriotBattery patriotBattery, Executor executors) {
+    public BetterRadar(PatriotBattery patriotBattery, Integer bulletCounter, Executor executors) {
         this.patriotBattery = patriotBattery;
+        this.bulletCounter = bulletCounter;
         this.executor = executors;
     }
 
@@ -24,7 +25,7 @@ public class BetterRadar implements Runnable {
     @Override
     public void run() {
 
-        for (int i = 0; i < BULLET_COUNTER; i++) {
+        for (int i = 0; i < bulletCounter; i++) {
             patriotBattery.launchPatriot();
         }
 

@@ -8,7 +8,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-public class RepatRule implements TestRule {
+public class RepeatRule implements TestRule {
 
     @Retention( RetentionPolicy.RUNTIME )
     @Target( {
